@@ -14,6 +14,7 @@ import MakeStoryPage from "./pages/MakeStoryPage";
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
+import AllStoriesPage from "./pages/AllStoriesPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -34,6 +35,7 @@ function App() {
         <Route path="/login" component={Login} />
         <Route path="/admin/users" component={MembersPage} />
         <Route path="/admin/makestory" component={MakeStoryPage} />
+        <Route path="/admin/allstories" component={AllStoriesPage} />
       </Switch>
     </div>
   );
