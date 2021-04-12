@@ -12,6 +12,7 @@ export const LOGIN_SUCCESS = "LOGIN_SUCCESS";
 export const TOKEN_STILL_VALID = "TOKEN_STILL_VALID";
 export const LOG_OUT = "LOG_OUT";
 export const USER_UPDATED = "USER_UPDATED";
+export const STORY_POST_SUCCESS = "STORY_POST_SUCCESS";
 
 const loginSuccess = (userWithToken) => {
   return {
@@ -28,6 +29,11 @@ const tokenStillValid = (userWithoutToken) => ({
 export const userUpdated = (user) => ({
   type: USER_UPDATED,
   payload: user,
+});
+
+export const storyPostSuccess = (story) => ({
+  type: STORY_POST_SUCCESS,
+  payload: story,
 });
 
 export const logOut = () => ({ type: LOG_OUT });
@@ -112,6 +118,49 @@ export const getUserWithStoredToken = () => {
       // get rid of the token by logging out
       dispatch(logOut());
       dispatch(appDoneLoading());
+    }
+  };
+};
+
+export const postStory = (
+  name,
+  storySentence,
+  preziUrl,
+  imageUrl,
+  question,
+  history
+) => {
+  return async (dispatch, getState) => {
+    const { token } = selectUser(getState());
+    // console.log(name, storySentence, preziUrl, imageUrl, question);
+    dispatch(appLoading());
+
+    try {
+      const response = await axios.post(
+        `${apiUrl}/stories`,
+        {
+          name,
+          storySentence,
+          preziUrl,
+          imageUrl,
+          question,
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
+
+      // console.log("Yep!", response);
+      dispatch(
+        showMessageWithTimeout("success", false, response.data.message, 3000)
+      );
+      history.push("/");
+      dispatch(storyPostSuccess(response.data.story));
+      dispatch(appDoneLoading());
+    } catch (e) {
+      console.error(e);
     }
   };
 };
