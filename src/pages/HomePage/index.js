@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { Jumbotron } from "react-bootstrap";
 import { fetchStories } from "../../store/allStories/actions";
 import { selectStories } from "../../store/allStories/selectors";
@@ -25,12 +26,14 @@ export default function HomePage() {
         allStories.map((story) => {
           return (
             <div>
-              <img
-                src={story.imageUrl}
-                alt="story Pictur"
-                height="200px"
-                width="200px"
-              />
+              <Link to={`./storydetails/${story.id}`}>
+                <img
+                  src={story.imageUrl}
+                  alt="story Pictur"
+                  height="200px"
+                  width="200px"
+                />
+              </Link>
             </div>
           );
         })

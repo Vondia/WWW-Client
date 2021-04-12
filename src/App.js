@@ -15,6 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
 import AllStoriesPage from "./pages/AllStoriesPage";
+import StoryDetailPage from "./pages/StoryDetailPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/" component={HomePage} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
+        <Route path="/storydetails/:id" component={StoryDetailPage} />
         <Route path="/admin/users" component={MembersPage} />
         <Route path="/admin/makestory" component={MakeStoryPage} />
         <Route path="/admin/allstories" component={AllStoriesPage} />
