@@ -27,6 +27,9 @@ export default function Navigation() {
           {wwwAdmin ? (
             <NavbarItem path="/admin/users" linkText="View Members" />
           ) : null}
+          {wwwAdmin ? (
+            <NavbarItem path="/admin/makestory" linkText="Add new story" />
+          ) : null}
           {loginLogoutControls}
         </Nav>
       </Navbar.Collapse>
