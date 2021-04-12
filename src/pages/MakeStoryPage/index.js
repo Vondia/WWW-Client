@@ -14,7 +14,7 @@ export default function MySpaceForm() {
   const [storySentence, setStorySentence] = useState("");
   const [question, setQuestion] = useState("");
   const [preziUrl, setPreziUrl] = useState(
-    '<iframe src="https://prezi.com/p/_vjrnovaf7ch/embed/" id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" height="1080" width="1920"></iframe>'
+    "https://prezi.com/p/_vjrnovaf7ch/embed/"
   );
   const [imageUrl, setImageUrl] = useState(
     "https://source.unsplash.com/1600x900/?"
@@ -58,11 +58,6 @@ export default function MySpaceForm() {
           type="text"
           placeholder="Embedded Prezi link goes here"
         />
-        {imageUrl ? (
-          <Col className="mt-4" md={{ span: 8, offset: 2 }}>
-            <Image src={preziUrl} alt="preview" thumbnail />
-          </Col>
-        ) : null}
       </Form.Group>
       <Form.Group>
         <Form.Label>Image url</Form.Label>

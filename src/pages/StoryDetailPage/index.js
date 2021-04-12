@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { fetchStory } from "../../store/story/actions";
 import { selectStory } from "../../store/story/selectors";
+import ReactSpoiler from "react-spoiler";
 
 export default function StoryDetailPage() {
   const dispatch = useDispatch();
@@ -32,32 +33,35 @@ export default function StoryDetailPage() {
           width="auto"
         ></iframe>
       </div>
-
       <div>{oneStory.question}</div>
-      <div>
-        {!Array.isArray(oneStory.answers) ? (
-          <p>loading ...</p>
-        ) : (
-          oneStory.answers.map((answer) => {
-            return (
-              <div>
-                {answer.correctAnswer ? (
-                  <div style={{ backgroundColor: "green" }}>
-                    {answer.answer}
-                  </div>
-                ) : (
-                  <div style={{ backgroundColor: "red" }}>{answer.answer}</div>
-                )}{" "}
+      <ReactSpoiler blur={10} hoverBlur={8}>
+        <div>
+          {!Array.isArray(oneStory.answers) ? (
+            <p>loading ...</p>
+          ) : (
+            oneStory.answers.map((answer) => {
+              return (
                 <div>
-                  <button onClick={() => (answer.correctAnswer ? "a" : "b")}>
-                    {answer.answer}
-                  </button>
+                  {answer.correctAnswer ? (
+                    <div style={{ backgroundColor: "green" }}>
+                      {answer.answer}
+                    </div>
+                  ) : (
+                    <div style={{ backgroundColor: "red" }}>
+                      {answer.answer}
+                    </div>
+                  )}{" "}
+                  <div>
+                    <button onClick={() => (answer.correctAnswer ? "a" : "b")}>
+                      {answer.answer}
+                    </button>
+                  </div>
                 </div>
-              </div>
-            );
-          })
-        )}
-      </div>
+              );
+            })
+          )}
+        </div>
+      </ReactSpoiler>
     </div>
   );
 }
