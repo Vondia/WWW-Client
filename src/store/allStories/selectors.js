@@ -1,3 +1,3 @@
 export function selectStories(reduxStore) {
-  return reduxStore.story.allStories;
+  return reduxStore.allStories.allStories;
 }

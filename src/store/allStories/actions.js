@@ -4,7 +4,7 @@ const apiUrl = process.env.API_URL || "//localhost:4000";
 
 export function storyList(data) {
   return {
-    type: "tables/fetched",
+    type: "stories/fetched",
     payload: data,
   };
 }
