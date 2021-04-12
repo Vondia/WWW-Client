@@ -25,10 +25,9 @@ export default function HomePage() {
         allStories.map((story) => {
           return (
             <div>
-              {/* <h2>Name: {story.name},</h2> */}
               <img
                 src={story.imageUrl}
-                alt="pictur from the story"
+                alt="story Pictur"
                 height="200px"
                 width="200px"
               />
@@ -40,8 +39,7 @@ export default function HomePage() {
   );
 }
 
-{
-  /* <iframe
+/* <iframe
 title="prezi"
 src="https://prezi.com/p/kr9wclafgov5/embed/"
 id="iframe_container"
@@ -53,4 +51,3 @@ allow="autoplay; fullscreen"
 height="auto"
 width="100%"
 ></iframe> */
-}

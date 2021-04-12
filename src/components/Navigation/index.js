@@ -30,6 +30,9 @@ export default function Navigation() {
           {wwwAdmin ? (
             <NavbarItem path="/admin/makestory" linkText="Add new story" />
           ) : null}
+          {wwwAdmin ? (
+            <NavbarItem path="/admin/allstories" linkText="All stories" />
+          ) : null}
           {loginLogoutControls}
         </Nav>
       </Navbar.Collapse>
