@@ -46,7 +46,6 @@ export default function MembersPage() {
               <tr>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
-                <td>{JSON.stringify(user.accountBlocked)}</td>
                 <td>
                   {user.accountBlocked ? (
                     <button

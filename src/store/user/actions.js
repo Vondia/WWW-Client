@@ -128,6 +128,14 @@ export const postStory = (
   preziUrl,
   imageUrl,
   question,
+  answer1,
+  answer2,
+  answer3,
+  answer4,
+  correctAnswer1,
+  correctAnswer2,
+  correctAnswer3,
+  correctAnswer4,
   history
 ) => {
   return async (dispatch, getState) => {
@@ -144,6 +152,14 @@ export const postStory = (
           preziUrl,
           imageUrl,
           question,
+          answer1,
+          answer2,
+          answer3,
+          answer4,
+          correctAnswer1,
+          correctAnswer2,
+          correctAnswer3,
+          correctAnswer4,
         },
         {
           headers: {
