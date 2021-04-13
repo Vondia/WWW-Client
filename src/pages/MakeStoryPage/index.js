@@ -7,7 +7,7 @@ import Image from "react-bootstrap/Image";
 import { useDispatch } from "react-redux";
 import { postStory } from "../../store/user/actions";
 
-export default function MySpaceForm() {
+export default function MakeStoryPage() {
   const dispatch = useDispatch();
   const history = useHistory();
   const [name, setName] = useState("");
@@ -19,13 +19,36 @@ export default function MySpaceForm() {
   const [imageUrl, setImageUrl] = useState(
     "https://source.unsplash.com/1600x900/?"
   );
+  const [answer1, setAnswer1] = useState("");
+  const [answer2, setAnswer2] = useState("");
+  const [answer3, setAnswer3] = useState("");
+  const [answer4, setAnswer4] = useState("");
+  const [correctAnswer1, setCorrectAnswer1] = useState("");
+  const [correctAnswer2, setCorrectAnswer2] = useState("");
+  const [correctAnswer3, setCorrectAnswer3] = useState("");
+  const [correctAnswer4, setCorrectAnswer4] = useState("");
 
   function submitForm(event) {
     event.preventDefault();
 
     // console.log(name, content, imageUrl);
     dispatch(
-      postStory(name, storySentence, preziUrl, imageUrl, question, history)
+      postStory(
+        name,
+        storySentence,
+        preziUrl,
+        imageUrl,
+        question,
+        answer1,
+        answer2,
+        answer3,
+        answer4,
+        correctAnswer1,
+        correctAnswer2,
+        correctAnswer3,
+        correctAnswer4,
+        history
+      )
     );
   }
   return (
@@ -80,6 +103,66 @@ export default function MySpaceForm() {
           onChange={(event) => setQuestion(event.target.value)}
           type="text"
           placeholder="Put the question here"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Answer 1</Form.Label>
+        <Form.Control
+          value={answer1}
+          onChange={(event) => setAnswer1(event.target.value)}
+          type="text"
+          placeholder="Put the first answer here"
+        />
+        <Form.Control
+          value={correctAnswer1}
+          onChange={(event) => setCorrectAnswer1(event.target.value)}
+          type="text"
+          placeholder="Is this answer true or false?"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Answer 2</Form.Label>
+        <Form.Control
+          value={answer2}
+          onChange={(event) => setAnswer2(event.target.value)}
+          type="text"
+          placeholder="Put the first answer here"
+        />
+        <Form.Control
+          value={correctAnswer2}
+          onChange={(event) => setCorrectAnswer2(event.target.value)}
+          type="text"
+          placeholder="Is this answer true or false?"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Answer 3</Form.Label>
+        <Form.Control
+          value={answer3}
+          onChange={(event) => setAnswer3(event.target.value)}
+          type="text"
+          placeholder="Put the first answer here"
+        />
+        <Form.Control
+          value={correctAnswer3}
+          onChange={(event) => setCorrectAnswer3(event.target.value)}
+          type="text"
+          placeholder="Is this answer true or false?"
+        />
+      </Form.Group>
+      <Form.Group>
+        <Form.Label>Answer 4</Form.Label>
+        <Form.Control
+          value={answer4}
+          onChange={(event) => setAnswer4(event.target.value)}
+          type="text"
+          placeholder="Put the first answer here"
+        />
+        <Form.Control
+          value={correctAnswer4}
+          onChange={(event) => setCorrectAnswer4(event.target.value)}
+          type="text"
+          placeholder="Is this answer true or false?"
         />
       </Form.Group>
 
