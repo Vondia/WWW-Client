@@ -4,10 +4,15 @@ import { Jumbotron } from "react-bootstrap";
 import { fetchStories } from "../../store/allStories/actions";
 import { selectStories } from "../../store/allStories/selectors";
 import moment from "moment";
+import { deleteStory } from "../../store/story/actions";
 
 export default function AllStoriesPage() {
   const dispatch = useDispatch();
   const allStories = useSelector(selectStories);
+  const doDeleteStories = (storyId) => {
+    console.log("storyId", storyId);
+    dispatch(deleteStory(storyId));
+  };
 
   useEffect(() => {
     dispatch(fetchStories());
@@ -42,7 +47,9 @@ export default function AllStoriesPage() {
                     <button>edit</button>
                   </td>
                   <td>
-                    <button>delete</button>
+                    <button onClick={() => doDeleteStories(story.id)}>
+                      delete
+                    </button>
                   </td>
                 </tr>
               </tbody>
