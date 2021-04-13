@@ -62,7 +62,7 @@ export default function StoryDetailPage() {
                     answer.correctAnswer
                       ? () => {
                           alert("Correct well Done!");
-                          console.log("correct answer");
+                          // console.log("correct answer");
                         }
                       : () => alert("WRONG did you pay attention!?")
                   }
