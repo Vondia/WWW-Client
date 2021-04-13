@@ -11,6 +11,11 @@ export default function oneStoryReducer(state = initialState, action) {
         allStories: action.payload,
       };
 
+    case "story/storyDeleted":
+      return {
+        loading: false,
+      };
+
     default:
       return state;
   }

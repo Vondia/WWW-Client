@@ -33,8 +33,8 @@ export default function StoryDetailPage() {
           mozallowfullscreen=""
           allowfullscreen=""
           allow="autoplay; fullscreen"
-          height="100%"
-          width="auto"
+          height="500px"
+          width="100%"
         ></iframe>
       </div>
       <div>{oneStory.question}</div>
