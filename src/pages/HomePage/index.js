@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Jumbotron } from "react-bootstrap";
 import { fetchStories } from "../../store/allStories/actions";
 import { selectStories } from "../../store/allStories/selectors";
+import "./index.css";
 
 export default function HomePage() {
   const dispatch = useDispatch();
@@ -20,37 +21,24 @@ export default function HomePage() {
           <h1>WereldWijde Weetjes</h1>
         </Jumbotron>
       </div>
-      {!Array.isArray(allStories) ? (
-        <p>loading ...</p>
-      ) : (
-        allStories.map((story) => {
-          return (
-            <div>
-              <Link to={`./storydetails/${story.id}`}>
-                <img
-                  src={story.imageUrl}
-                  alt="story Pictur"
-                  height="200px"
-                  width="200px"
-                />
-              </Link>
-            </div>
-          );
-        })
-      )}
+      <div class="flex-container">
+        {!Array.isArray(allStories) ? (
+          <p>loading ...</p>
+        ) : (
+          allStories.map((story) => {
+            return (
+              <div class="image-container">
+                <Link to={`./storydetails/${story.id}`}>
+                  <img src={story.imageUrl} alt="story related" class="image" />
+                </Link>
+                <div class="middle">
+                  <div class="text">{story.storySentence}</div>
+                </div>
+              </div>
+            );
+          })
+        )}
+      </div>
     </div>
   );
 }
-
-/* <iframe
-title="prezi"
-src="https://prezi.com/p/kr9wclafgov5/embed/"
-id="iframe_container"
-frameborder="0"
-webkitallowfullscreen=""
-mozallowfullscreen=""
-allowfullscreen=""
-allow="autoplay; fullscreen"
-height="auto"
-width="100%"
-></iframe> */
