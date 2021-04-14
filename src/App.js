@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
 
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Loading from "./components/Loading";
 import MessageBox from "./components/MessageBox";
@@ -16,9 +16,17 @@ import { selectAppLoading } from "./store/appState/selectors";
 import { getUserWithStoredToken } from "./store/user/actions";
 import AllStoriesPage from "./pages/AllStoriesPage";
 import StoryDetailPage from "./pages/StoryDetailPage";
+import { selectUser } from "./store/user/selectors";
 
 function App() {
+  const userData = useSelector(selectUser);
   const dispatch = useDispatch();
+
+  const protectedRoutes = (Component, routerProps) => {
+    const isAdmin = userData.isAdmin === true;
+    return isAdmin ? <Component {...routerProps} /> : <Redirect to="/login" />;
+  };
+
   const isLoading = useSelector(selectAppLoading);
 
   useEffect(() => {
@@ -35,9 +43,18 @@ function App() {
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
         <Route path="/storydetails/:id" component={StoryDetailPage} />
-        <Route path="/admin/users" component={MembersPage} />
-        <Route path="/admin/makestory" component={MakeStoryPage} />
-        <Route path="/admin/allstories" component={AllStoriesPage} />
+        <Route
+          path="/admin/users"
+          render={(routerProps) => protectedRoutes(MembersPage, routerProps)}
+        />
+        <Route
+          path="/admin/makestory"
+          render={(routerProps) => protectedRoutes(MakeStoryPage, routerProps)}
+        />
+        <Route
+          path="/admin/allstories"
+          render={(routerProps) => protectedRoutes(AllStoriesPage, routerProps)}
+        />
       </Switch>
     </div>
   );

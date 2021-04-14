@@ -113,12 +113,18 @@ export default function MakeStoryPage() {
           type="text"
           placeholder="Put the first answer here"
         />
-        <Form.Control
-          value={correctAnswer1}
-          onChange={(event) => setCorrectAnswer1(event.target.value)}
-          type="text"
-          placeholder="Is this answer true or false?"
-        />
+      </Form.Group>
+      <Form.Group>
+        <select
+          class="form-control form-control-sm"
+          onChange={(e) => {
+            setCorrectAnswer1(e.target.value);
+          }}
+        >
+          <option>true or false?</option>
+          <option value={true}>true</option>
+          <option value={false}>false</option>
+        </select>
       </Form.Group>
       <Form.Group>
         <Form.Label>Answer 2</Form.Label>
@@ -128,12 +134,18 @@ export default function MakeStoryPage() {
           type="text"
           placeholder="Put the first answer here"
         />
-        <Form.Control
-          value={correctAnswer2}
-          onChange={(event) => setCorrectAnswer2(event.target.value)}
-          type="text"
-          placeholder="Is this answer true or false?"
-        />
+      </Form.Group>
+      <Form.Group>
+        <select
+          class="form-control form-control-sm"
+          onChange={(e) => {
+            setCorrectAnswer2(e.target.value);
+          }}
+        >
+          <option>true or false?</option>
+          <option value={true}>true</option>
+          <option value={false}>false</option>
+        </select>
       </Form.Group>
       <Form.Group>
         <Form.Label>Answer 3</Form.Label>
@@ -143,12 +155,18 @@ export default function MakeStoryPage() {
           type="text"
           placeholder="Put the first answer here"
         />
-        <Form.Control
-          value={correctAnswer3}
-          onChange={(event) => setCorrectAnswer3(event.target.value)}
-          type="text"
-          placeholder="Is this answer true or false?"
-        />
+      </Form.Group>
+      <Form.Group>
+        <select
+          class="form-control form-control-sm"
+          onChange={(e) => {
+            setCorrectAnswer3(e.target.value);
+          }}
+        >
+          <option>true or false?</option>
+          <option value={true}>true</option>
+          <option value={false}>false</option>
+        </select>
       </Form.Group>
       <Form.Group>
         <Form.Label>Answer 4</Form.Label>
@@ -158,12 +176,18 @@ export default function MakeStoryPage() {
           type="text"
           placeholder="Put the first answer here"
         />
-        <Form.Control
-          value={correctAnswer4}
-          onChange={(event) => setCorrectAnswer4(event.target.value)}
-          type="text"
-          placeholder="Is this answer true or false?"
-        />
+      </Form.Group>
+      <Form.Group>
+        <select
+          class="form-control form-control-sm"
+          onChange={(e) => {
+            setCorrectAnswer4(e.target.value);
+          }}
+        >
+          <option>true or false?</option>
+          <option value={true}>true</option>
+          <option value={false}>false</option>
+        </select>
       </Form.Group>
 
       <Form.Group className="mt-5">
