@@ -4,14 +4,15 @@ import { useParams } from "react-router";
 import { fetchStory } from "../../store/story/actions";
 import { selectStory } from "../../store/story/selectors";
 import ReactSpoiler from "react-spoiler";
+import Button from "react-bootstrap/Button";
 
 export default function StoryDetailPage() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const oneStory = useSelector(selectStory);
-  const [color, setColor] = useState("grey");
+  // const [color, setColor] = useState("grey");
 
-  console.log("does the color change", color);
+  // console.log("does the color change", color);
 
   //   const answerTrue = oneStory.answer?.correctAnswer;
 
@@ -33,30 +34,21 @@ export default function StoryDetailPage() {
           mozallowfullscreen=""
           allowfullscreen=""
           allow="autoplay; fullscreen"
-          height="500px"
+          height="600px"
           width="100%"
         ></iframe>
       </div>
-      <div>{oneStory.question}</div>
-      {/* <ReactSpoiler blur={10} hoverBlur={8}> */}
+      <ReactSpoiler blur={10} hoverBlur={8}>
+        <div>{oneStory.question}</div>
+      </ReactSpoiler>
       <div>
         {!Array.isArray(oneStory.answers) ? (
           <p>loading ...</p>
         ) : (
           oneStory.answers.map((answer) => {
             return (
-              //   <div>
-              //     {answer.correctAnswer ? (
-              //       <div style={{ backgroundColor: `${color}` }}>
-              //         {answer.answer}
-              //       </div>
-              //     ) : (
-              //       <div style={{ backgroundColor: `${color}` }}>
-              //         {answer.answer}
-              //       </div>
-              //     )}{" "}
               <div>
-                <button
+                <Button
                   id={answer.answer}
                   onClick={
                     answer.correctAnswer
@@ -68,14 +60,13 @@ export default function StoryDetailPage() {
                   }
                 >
                   {answer.answer}
-                </button>
+                </Button>
               </div>
               //   </div>
             );
           })
         )}
       </div>
-      {/* </ReactSpoiler> */}
     </div>
   );
 }
