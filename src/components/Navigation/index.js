@@ -18,7 +18,12 @@ export default function Navigation() {
   return (
     <Navbar bg="light" expand="lg">
       <Navbar.Brand as={NavLink} to="/">
-        WereldWijde Weetjes
+        <img
+          src="https://res.cloudinary.com/dv4rmtkov/image/upload/v1618426598/400PngdpiLogo_hcynba.png"
+          alt="logo"
+          widh="40px"
+          height="40px"
+        />
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
