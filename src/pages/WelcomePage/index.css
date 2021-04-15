@@ -6,23 +6,15 @@
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 1000px;
+  height: 90vmin;
   display: flex;
 }
 
-/* .flex-containerWelcomepage {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  background-color: tomato;
-} */
-
 .headerWelcomepage {
-  align-items: flex-end;
   text-align: center;
-  margin-top: 360px;
-  width: 30%;
+  margin: auto;
   height: fit-content;
+  padding: 10px;
   background-color: rgba(211, 211, 211, 0.6);
 }
 
@@ -47,3 +39,12 @@
   box-shadow: 0 5px #666;
   transform: translateY(4px);
 }
+
+.text {
+  font-family: "Finger Paint", cursive;
+  color: #700660;
+  padding-top: 2px;
+  padding-bottom: 5px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");

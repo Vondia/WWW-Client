@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import Form from "react-bootstrap/Form";
 import Col from "react-bootstrap/Col";
-import Button from "react-bootstrap/Button";
 import Image from "react-bootstrap/Image";
 import { useDispatch } from "react-redux";
 import { postStory } from "../../store/user/actions";
@@ -191,9 +190,13 @@ export default function MakeStoryPage() {
       </Form.Group>
 
       <Form.Group className="mt-5">
-        <Button variant="primary" type="submit" onClick={submitForm}>
+        <button
+          className="button button:hover"
+          type="submit"
+          onClick={submitForm}
+        >
           Post new Story!
-        </Button>
+        </button>
       </Form.Group>
     </Form>
   );

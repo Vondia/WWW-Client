@@ -38,9 +38,9 @@ export default function StoryDetailPage() {
           width="100%"
         ></iframe>
       </div>
-      <ReactSpoiler blur={10} hoverBlur={8}>
-        <div>{oneStory.question}</div>
-      </ReactSpoiler>
+      {/* <ReactSpoiler blur={10} hoverBlur={8}> */}
+      <div className="text">{oneStory.question}</div>
+      {/* </ReactSpoiler> */}
       <div>
         {!Array.isArray(oneStory.answers) ? (
           <p>loading ...</p>
@@ -48,7 +48,9 @@ export default function StoryDetailPage() {
           oneStory.answers.map((answer) => {
             return (
               <div>
-                <Button
+                <button
+                  className="button button:hover"
+                  style={{ margin: "5px" }}
                   id={answer.answer}
                   onClick={
                     answer.correctAnswer
@@ -60,7 +62,7 @@ export default function StoryDetailPage() {
                   }
                 >
                   {answer.answer}
-                </Button>
+                </button>
               </div>
               //   </div>
             );
