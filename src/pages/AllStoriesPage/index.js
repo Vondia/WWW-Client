@@ -21,9 +21,13 @@ export default function AllStoriesPage() {
   return (
     <div>
       <div>
-        <Jumbotron>
-          <h1>All stories:</h1>
-        </Jumbotron>
+        <div
+          className="font-weight-bold"
+          style={{ fontSize: 40, textAlign: "center" }}
+          class="p-2 flex-fill bd-highlight"
+        >
+          <h1>Alle verhalen:</h1>
+        </div>
       </div>
       <table>
         <thead>
@@ -44,10 +48,13 @@ export default function AllStoriesPage() {
                   <td>{story.name}</td>
                   <td>{moment(story.createdAt).format("dddd DD MMMM")}</td>
                   <td>
-                    <button>edit</button>
+                    <button className="button button:hover">edit</button>
                   </td>
                   <td>
-                    <button onClick={() => doDeleteStories(story.id)}>
+                    <button
+                      onClick={() => doDeleteStories(story.id)}
+                      className="button button:hover"
+                    >
                       delete
                     </button>
                   </td>
@@ -57,6 +64,11 @@ export default function AllStoriesPage() {
           })
         )}
       </table>
+      <footer class="footer bg-light text-center text-lg-start">
+        <div class="text-center p-3" style={{ backgroundColor: "#Aedff7" }}>
+          © 2021 Copyright: WereldWijde Weetjes
+        </div>
+      </footer>
     </div>
   );
 }

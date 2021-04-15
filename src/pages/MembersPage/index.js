@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useParams } from "react-router";
 import { selectAllUsers } from "../../store/allUsers/selectors";
 import { fetchUsers } from "../../store/allUsers/actions";
-// import Loading from "../../components/Loading";
-import { Jumbotron } from "react-bootstrap";
 import { changeBlockStatus } from "../../store/user/actions";
+import "./index.css";
 
 export default function MembersPage() {
   const dispatch = useDispatch();
@@ -28,59 +26,88 @@ export default function MembersPage() {
     <p>{JSON.stringify(allUsers)}loading ...</p>
   ) : (
     <div>
-      <Jumbotron>
-        <h1>Upcoming Reservations</h1>
-      </Jumbotron>
-      <table>
-        <thead>
-          <tr>
-            <th>Name</th>
-            <th>Email</th>
-            <th>accountBlocked</th>
-            <th>Block?</th>
-          </tr>
-        </thead>
-        {allUsers.map((user) => {
-          return (
-            <tbody>
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight"></div>
+        <div
+          className="font-weight-bold"
+          style={{ fontSize: 40, textAlign: "center" }}
+          class="p-2 flex-fill bd-highlight"
+        >
+          <h1>Alle gebruikers</h1>
+        </div>
+        <div class="p-2 flex-fill bd-highlight"></div>
+      </div>
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight"></div>
+        <div style={{ margin: "auto" }} class="p-2 flex-fill bd-highlight">
+          <table>
+            <thead
+              style={{
+                backgroundColor: "#Aedff7",
+                border: "3px solid #700660",
+              }}
+            >
               <tr>
-                <td>{user.name}</td>
-                <td>{user.email}</td>
-                <td>
-                  {user.accountBlocked ? (
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-
-                        dispatch(
-                          changeBlockStatus(user.id, user.accountBlocked)
-                        );
-                      }}
-                      className="button button:hover"
-                    >
-                      Unblock
-                    </button>
-                  ) : (
-                    <button
-                      onClick={(e) => {
-                        e.preventDefault();
-
-                        dispatch(
-                          changeBlockStatus(user.id, user.accountBlocked)
-                        );
-                        console.log(`this is the users id:`, user.id);
-                      }}
-                      className="button button:hover"
-                    >
-                      Block
-                    </button>
-                  )}
-                </td>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Block gebruiker</th>
               </tr>
-            </tbody>
-          );
-        })}
-      </table>
+            </thead>
+            {allUsers.map((user) => {
+              return (
+                <tbody>
+                  <tr>
+                    <td>{user.name}</td>
+                    <td>{user.email}</td>
+                    <td style={{ textAlign: "center" }}>
+                      {user.accountBlocked ? (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+
+                            dispatch(
+                              changeBlockStatus(user.id, user.accountBlocked)
+                            );
+                          }}
+                          className="button button:hover"
+                        >
+                          Unblock
+                        </button>
+                      ) : (
+                        <button
+                          onClick={(e) => {
+                            e.preventDefault();
+
+                            dispatch(
+                              changeBlockStatus(user.id, user.accountBlocked)
+                            );
+                            console.log(`this is the users id:`, user.id);
+                          }}
+                          className="button button:hover"
+                        >
+                          Block
+                        </button>
+                      )}
+                    </td>
+                  </tr>
+                </tbody>
+              );
+            })}
+          </table>
+        </div>
+        <div class="p-2 flex-fill bd-highlight"></div>
+      </div>
+      <div class="d-flex bd-highlight">
+        <div class="p-2 flex-fill bd-highlight"></div>
+        <div class="p-2 flex-fill bd-highlight"></div>
+        <div class="p-2 flex-fill bd-highlight"></div>
+      </div>
+
+      <footer class="footer bg-light text-center text-lg-start">
+        <div class="text-center p-3" style={{ backgroundColor: "#Aedff7" }}>
+          © 2021 Copyright: WereldWijde Weetjes
+        </div>
+      </footer>
     </div>
   );
 }

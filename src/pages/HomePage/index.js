@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Jumbotron } from "react-bootstrap";
 import { fetchStories } from "../../store/allStories/actions";
 import { selectStories } from "../../store/allStories/selectors";
 import "./index.css";
@@ -16,11 +15,6 @@ export default function HomePage() {
 
   return (
     <div>
-      <div>
-        <Jumbotron>
-          <h1>WereldWijde Weetjes</h1>
-        </Jumbotron>
-      </div>
       <div class="flex-container">
         {!Array.isArray(allStories) ? (
           <p>loading ...</p>
