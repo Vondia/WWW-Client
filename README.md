@@ -14,7 +14,7 @@ but just from watching and listening the way they are used to with all the techn
 
 Insert gif or link to demo
 
-![Alt Text](https://media.giphy.com/media/sW6VQrmI6RmbaEXbJr/giphy.gif)
+![Alt Text](https://media.giphy.com/media/CnfHzzqQLnPUDbxLKI/giphy.gif)
 
 ## Features
 
