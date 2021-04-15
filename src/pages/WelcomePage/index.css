@@ -1,0 +1,49 @@
+/* Set a background image by replacing the URL below */
+.backgroundwelcomepage {
+  background: url("https://res.cloudinary.com/dv4rmtkov/image/upload/v1618482716/Taj-Mahalkopie_kw5rrd.jpg")
+    center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  background-size: cover;
+  -o-background-size: cover;
+  height: 1000px;
+  display: flex;
+}
+
+/* .flex-containerWelcomepage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: tomato;
+} */
+
+.headerWelcomepage {
+  align-items: flex-end;
+  text-align: center;
+  margin-top: 360px;
+  width: 30%;
+  height: fit-content;
+  background-color: rgba(211, 211, 211, 0.6);
+}
+
+.button {
+  background-color: #aedff7;
+  border: 2px solid #700660;
+  display: inline-block;
+  padding: 1px 5px;
+  text-align: center;
+  transition-duration: 0, 4s;
+  border-radius: 7px;
+  box-shadow: 0 4px #999;
+}
+
+.button:hover {
+  background-color: #700660;
+  color: rgb(0, 0, 0);
+}
+
+.button:active {
+  background-color: #700660;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}

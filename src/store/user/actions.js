@@ -172,7 +172,7 @@ export const postStory = (
       dispatch(
         showMessageWithTimeout("success", false, response.data.message, 3000)
       );
-      history.push("/");
+      history.push("/HomePage");
       dispatch(storyPostSuccess(response.data.story));
       dispatch(appDoneLoading());
     } catch (e) {

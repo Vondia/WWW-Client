@@ -10,6 +10,7 @@ import Login from "./pages/Login";
 import MembersPage from "./pages/MembersPage";
 import HomePage from "./pages/HomePage";
 import MakeStoryPage from "./pages/MakeStoryPage";
+import WelcomePage from "./pages/WelcomePage";
 
 import { useDispatch, useSelector } from "react-redux";
 import { selectAppLoading } from "./store/appState/selectors";
@@ -27,6 +28,11 @@ function App() {
     return isAdmin ? <Component {...routerProps} /> : <Redirect to="/login" />;
   };
 
+  const normalProtectedRoutes = (Component, routerProps) => {
+    const token = userData.token;
+    return token ? <Component {...routerProps} /> : <Redirect to="/login" />;
+  };
+
   const isLoading = useSelector(selectAppLoading);
 
   useEffect(() => {
@@ -39,9 +45,14 @@ function App() {
       <MessageBox />
       {isLoading ? <Loading /> : null}
       <Switch>
-        <Route exact path="/" component={HomePage} />
+        <Route exact path="/" component={WelcomePage} />
         <Route path="/signup" component={SignUp} />
         <Route path="/login" component={Login} />
+        <Route
+          exact
+          path="/HomePage"
+          render={(routerProps) => normalProtectedRoutes(HomePage, routerProps)}
+        />
         <Route path="/storydetails/:id" component={StoryDetailPage} />
         <Route
           path="/admin/users"

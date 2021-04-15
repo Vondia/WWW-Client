@@ -16,8 +16,8 @@ export default function Navigation() {
   const wwwAdmin = admin ? true : false;
 
   return (
-    <Navbar bg="light" expand="lg">
-      <Navbar.Brand as={NavLink} to="/">
+    <Navbar style={{ backgroundColor: `rgba(211,211,211, 0.6)` }} expand="lg">
+      <Navbar.Brand as={NavLink} to="/HomePage">
         <img
           src="https://res.cloudinary.com/dv4rmtkov/image/upload/v1618426598/400PngdpiLogo_hcynba.png"
           alt="logo"
@@ -28,7 +28,7 @@ export default function Navigation() {
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav style={{ width: "100%" }} fill>
-          <NavbarItem path="/" linkText="Home" />
+          <NavbarItem path="/HomePage" linkText="Home" />
           {wwwAdmin ? (
             <NavbarItem path="/admin/users" linkText="View Members" />
           ) : null}

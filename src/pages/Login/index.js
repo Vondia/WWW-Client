@@ -17,7 +17,7 @@ export default function SignUp() {
 
   useEffect(() => {
     if (token !== null) {
-      history.push("/");
+      history.push("/homepage");
     }
   }, [token, history]);
 
@@ -32,7 +32,7 @@ export default function SignUp() {
   }
 
   return (
-    <Container>
+    <div className="backgroundwelcomepage">
       <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
         <h1 className="mt-5 mb-5">Login</h1>
         <Form.Group controlId="formBasicEmail">
@@ -65,6 +65,6 @@ export default function SignUp() {
           Click here to sign up
         </Link>
       </Form>
-    </Container>
+    </div>
   );
 }
