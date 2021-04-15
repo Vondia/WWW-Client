@@ -1,10 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { fetchStory } from "../../store/story/actions";
 import { selectStory } from "../../store/story/selectors";
-import ReactSpoiler from "react-spoiler";
-import Button from "react-bootstrap/Button";
 
 export default function StoryDetailPage() {
   const dispatch = useDispatch();
@@ -64,7 +62,6 @@ export default function StoryDetailPage() {
                   {answer.answer}
                 </button>
               </div>
-              //   </div>
             );
           })
         )}
