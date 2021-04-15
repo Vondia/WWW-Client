@@ -1,42 +1,52 @@
-# Frontend template
+# WereldWijde Weetjes
 
-This is a simple react/redux/jwt template to start a project quickly
+This website is going to fill a very specific need. My mother is a primary school teacher and she had a great
+idea that fills a need in her and her collegaues classes. Like every day there is a schedule of what the kids
+are going to do on that day. But there is always some overlap from one topic to the other or even like right
+before a break or the end of the day.
 
-## Table of contents:
+Now we are going to fill this time with something that is both fun and educational. WereldWijde Weetjes is going
+to take the kids all over the world without them ever having to leave their classroom. My mother travels a lot and
+has a lot of content and fun facts from all around the world. On this site the kids wil learn not from books and reading
+but just from watching and listening the way they are used to with all the technoligy of today!
 
-- **[Setup](#setup-how-to-use-this-template)**
-- **[Create React App docs](#cra-docs)**
+## Demo
 
-## SETUP How to use this template
+Insert gif or link to demo
 
-1. Create a new project based on this template using the `Use this template` button
+![Alt Text](https://media.giphy.com/media/sW6VQrmI6RmbaEXbJr/giphy.gif)
 
-![HOW_TO_USE](https://user-images.githubusercontent.com/20372832/77003323-70966180-695d-11ea-8abe-b362d57135f3.gif)
+## Features
 
-2. Clone the app
+- sign-up and login
+- Embeded Prezi with sound
+- Fullscreen mode
+- Adding and removing stories from the stories
+- Admin powers such as: blocking users and deleting stories
 
-```
-git clone git@github.com:YOUR_GITHUB_NAME/YOUR_PROJECT_NAME.git
-```
+## Goals
 
-3. cd into your project
+I created Dinely as my final project for the Codaisseur Academy. The goals of the project were to:
 
-```
-cd YOUR_PROJECT_NAME
-```
+- Build a full stack app from scratch.
+- Apply all the skills I learned during the academy.
+- Explore new technologies, I chose to learn more about CSS, Bootstrap & how to embed outside sources.
+- Practice project planning with user stories, wireframes, a database model and a project board.
+- Use branches whem commiting and don't commit straight to master.
 
-4. install dependencies
+## Tech Stack
 
-```
-npm install
-```
+**Client:** React, Redux, Axios, CSS & React-Bootstrap
 
-5. Start development server with npm start
+**Server:** Node, Express, Sequelize & PostgreSQL database
 
-```
-npm start
-```
+## Feedback
 
-## CRA docs
+If you have any feedback, please reach out to me at pimvdbosch@gmail.com
 
-The normal Create React App docs can be found in [CRA_DOCS.md](./CRA_DOCS.md)
+## Links
+
+- [Project board](https://github.com/Vondia/WWW-server/projects/1)
+- [Wireframes](https://drive.google.com/drive/folders/1W0vWmtUqCahmsOgqZ6R_11frWwmAqizz)
+- [Database model](https://dbdiagram.io/d/606c841becb54e10c33ef340)
+- [Backend repository](https://github.com/Vondia/WWW-server)
