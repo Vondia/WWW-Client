@@ -16,7 +16,7 @@ export default function Navigation() {
   const wwwAdmin = admin ? true : false;
 
   return (
-    <Navbar style={{ backgroundColor: `rgba(211,211,211, 0.6)` }} expand="lg">
+    <Navbar style={{ backgroundColor: "#Aedff7" }} expand="lg">
       <Navbar.Brand as={NavLink} to="/HomePage">
         <img
           src="https://res.cloudinary.com/dv4rmtkov/image/upload/v1618426598/400PngdpiLogo_hcynba.png"

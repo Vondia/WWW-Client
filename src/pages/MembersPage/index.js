@@ -4,6 +4,7 @@ import { selectAllUsers } from "../../store/allUsers/selectors";
 import { fetchUsers } from "../../store/allUsers/actions";
 import { changeBlockStatus } from "../../store/user/actions";
 import "./index.css";
+import { Table } from "react-bootstrap";
 
 export default function MembersPage() {
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ export default function MembersPage() {
       <div class="d-flex bd-highlight">
         <div class="p-2 flex-fill bd-highlight"></div>
         <div style={{ margin: "auto" }} class="p-2 flex-fill bd-highlight">
-          <table>
+          <Table striped hover style={{ width: "90%" }}>
             <thead
               style={{
                 backgroundColor: "#Aedff7",
@@ -93,7 +94,7 @@ export default function MembersPage() {
                 </tbody>
               );
             })}
-          </table>
+          </Table>
         </div>
         <div class="p-2 flex-fill bd-highlight"></div>
       </div>
@@ -102,7 +103,6 @@ export default function MembersPage() {
         <div class="p-2 flex-fill bd-highlight"></div>
         <div class="p-2 flex-fill bd-highlight"></div>
       </div>
-
       <footer class="footer bg-light text-center text-lg-start">
         <div class="text-center p-3" style={{ backgroundColor: "#Aedff7" }}>
           © 2021 Copyright: WereldWijde Weetjes

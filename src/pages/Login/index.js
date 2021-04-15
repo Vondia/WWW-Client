@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Form from "react-bootstrap/Form";
-import Container from "react-bootstrap/Container";
-import Button from "react-bootstrap/Button";
 import { login } from "../../store/user/actions";
 import { selectToken } from "../../store/user/selectors";
 import { useDispatch, useSelector } from "react-redux";
@@ -32,8 +30,13 @@ export default function SignUp() {
   }
 
   return (
-    <div className="backgroundwelcomepage">
-      <Form as={Col} md={{ span: 6, offset: 3 }} className="mt-5">
+    <div>
+      <Form
+        as={Col}
+        md={{ span: 6, offset: 3 }}
+        style={{ paddingBottom: "19%" }}
+        className="mt-5"
+      >
         <h1 className="mt-5 mb-5">Login</h1>
         <Form.Group controlId="formBasicEmail">
           <Form.Label>Email address</Form.Label>
@@ -57,14 +60,23 @@ export default function SignUp() {
           />
         </Form.Group>
         <Form.Group className="mt-5">
-          <Button variant="primary" type="submit" onClick={submitForm}>
+          <button
+            className="button button:hover"
+            type="submit"
+            onClick={submitForm}
+          >
             Log in
-          </Button>
+          </button>
         </Form.Group>
         <Link to="/signup" style={{ textAlign: "center" }}>
           Click here to sign up
         </Link>
       </Form>
+      <footer class="footer bg-light text-center text-lg-start">
+        <div class="text-center p-3" style={{ backgroundColor: "#Aedff7" }}>
+          © 2021 Copyright: WereldWijde Weetjes
+        </div>
+      </footer>
     </div>
   );
 }
