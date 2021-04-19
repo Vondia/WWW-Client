@@ -26,7 +26,7 @@ Insert gif or link to demo
 
 ## Goals
 
-I created Dinely as my final project for the Codaisseur Academy. The goals of the project were to:
+I created WereldWijde Weetjes as my final project for the Codaisseur Academy. The goals of the project were to:
 
 - Build a full stack app from scratch.
 - Apply all the skills I learned during the academy.
