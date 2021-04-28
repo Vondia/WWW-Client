@@ -27,7 +27,9 @@ export default function SignUp() {
   function submitForm(event) {
     event.preventDefault();
 
-    if (password !== passwordCheck) {
+    if (!name || !email || !password || !passwordCheck) {
+      dispatch(setMessage("danger", true, "Vul alle velden in aub"));
+    } else if (password !== passwordCheck) {
       dispatch(setMessage("danger", true, "Wachtwoorden komen niet overeen."));
     } else {
       dispatch(signUp(name, email, password));
