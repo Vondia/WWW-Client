@@ -53,10 +53,10 @@ export default function StoryDetailPage() {
                   onClick={
                     answer.correctAnswer
                       ? () => {
-                          alert("Correct well Done!");
+                          alert("Goed gedaan!");
                           // console.log("correct answer");
                         }
-                      : () => alert("WRONG did you pay attention!?")
+                      : () => alert("Fout probeer het nog is")
                   }
                 >
                   {answer.answer}
