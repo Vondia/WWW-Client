@@ -1,6 +1,7 @@
 import axios from "axios";
 import { fetchStories } from "../allStories/actions";
 import { selectToken } from "../user/selectors";
+import apiUrl from "../../config/constants";
 
 // export const STORIES_DELETE = "STORIES_DELETE";
 
@@ -8,8 +9,6 @@ export const storyDeleted = (storyId) => ({
   type: "story/storyDeleted",
   payload: storyId,
 });
-
-const apiUrl = process.env.API_URL || "//localhost:4000";
 
 export function oneStory(data) {
   return {

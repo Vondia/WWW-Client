@@ -1,6 +1,5 @@
 import axios from "axios";
-
-const apiUrl = process.env.API_URL || "//localhost:4000";
+import apiUrl from "../../config/constants";
 
 export function storyList(data) {
   return {
