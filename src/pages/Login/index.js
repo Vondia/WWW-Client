@@ -37,25 +37,25 @@ export default function SignUp() {
         style={{ paddingBottom: "19%" }}
         className="mt-5"
       >
-        <h1 className="mt-5 mb-5">Login</h1>
+        <h1 className="mt-5 mb-5">Inloggen</h1>
         <Form.Group controlId="formBasicEmail">
-          <Form.Label>Email address</Form.Label>
+          <Form.Label>E-mailadres</Form.Label>
           <Form.Control
             value={email}
             onChange={(event) => setEmail(event.target.value)}
             type="email"
-            placeholder="Enter email"
+            placeholder="email@gmail.com"
             required
           />
         </Form.Group>
 
         <Form.Group controlId="formBasicPassword">
-          <Form.Label>Password</Form.Label>
+          <Form.Label>Wachtwoord</Form.Label>
           <Form.Control
             value={password}
             onChange={(event) => setPassword(event.target.value)}
             type="password"
-            placeholder="Password"
+            placeholder="Wachtwoord"
             required
           />
         </Form.Group>
@@ -69,7 +69,7 @@ export default function SignUp() {
           </button>
         </Form.Group>
         <Link to="/signup" style={{ textAlign: "center" }}>
-          Click here to sign up
+          Klik hier om je aan te melden!
         </Link>
       </Form>
       <footer class="footer bg-light text-center text-lg-start">

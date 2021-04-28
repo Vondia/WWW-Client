@@ -17,18 +17,18 @@ export default function HomePage() {
               Welkom bij WereldWijde Weetjes
             </h1>
             <p className="mt-3 mb-2 pl-3 pr-3">
-              DE plek waar je op een leuke manier erg veel leert! Schrijf je
-              snel in om meteen aan de slag te kunnen.
+              DE plek waar je op een leuke manier wat over de wijde wereld te
+              weten komt! Ga je mee op reis?
             </p>
 
             {!token ? (
               <div>
                 <button className="button button:hover mb-2">
-                  <Link to={"./login"}>login</Link>
+                  <Link to={"./login"}>Inloggen</Link>
                 </button>
                 <br />
                 <button className="button button:hover">
-                  <Link to={"./signup"}>signup</Link>
+                  <Link to={"./signup"}>aanmelden</Link>
                 </button>{" "}
               </div>
             ) : null}

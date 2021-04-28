@@ -1,9 +1,4 @@
-import {
-  LOG_OUT,
-  LOGIN_SUCCESS,
-  TOKEN_STILL_VALID,
-  STORY_POST_SUCCESS,
-} from "./actions";
+import { LOG_OUT, LOGIN_SUCCESS, TOKEN_STILL_VALID } from "./actions";
 
 const initialState = {
   token: localStorage.getItem("token"),

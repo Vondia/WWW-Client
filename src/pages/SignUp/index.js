@@ -7,11 +7,13 @@ import { selectToken } from "../../store/user/selectors";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory, Link } from "react-router-dom";
 import { Col } from "react-bootstrap";
+import { setMessage } from "../../store/appState/actions";
 
 export default function SignUp() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordCheck, setPasswordCheck] = useState("");
   const dispatch = useDispatch();
   const token = useSelector(selectToken);
   const history = useHistory();
@@ -25,13 +27,17 @@ export default function SignUp() {
   function submitForm(event) {
     event.preventDefault();
 
-    dispatch(signUp(name, email, password));
+    if (password !== passwordCheck) {
+      dispatch(setMessage("danger", true, "Wachtwoorden komen niet overeen."));
+    } else {
+      dispatch(signUp(name, email, password));
 
-    setEmail("");
-    setPassword("");
-    setName("");
+      setEmail("");
+      setPassword("");
+      setPasswordCheck("");
+      setName("");
+    }
   }
-
   return (
     <div>
       <Container>
@@ -41,47 +47,57 @@ export default function SignUp() {
           style={{ paddingBottom: "10%" }}
           className="mt-5"
         >
-          <h1 className="mt-5 mb-5">Signup</h1>
+          <h1 className="mt-5 mb-5">Aanmelden</h1>
           <Form.Group controlId="formBasicName">
-            <Form.Label>Name</Form.Label>
+            <Form.Label>Naam</Form.Label>
             <Form.Control
               value={name}
               onChange={(event) => setName(event.target.value)}
               type="text"
-              placeholder="Enter name"
+              placeholder="Volledige naam"
               required
             />
           </Form.Group>
           <Form.Group controlId="formBasicEmail">
-            <Form.Label>Email address</Form.Label>
+            <Form.Label>E-mailadres</Form.Label>
             <Form.Control
               value={email}
               onChange={(event) => setEmail(event.target.value)}
               type="email"
-              placeholder="Enter email"
+              placeholder="email@gmail.com"
               required
             />
             <Form.Text className="text-muted">
-              We'll never share your email with anyone else.
+              We delen je e-mail niet met derden.
             </Form.Text>
           </Form.Group>
 
           <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
+            <Form.Label>Wachtwoord</Form.Label>
             <Form.Control
               value={password}
               onChange={(event) => setPassword(event.target.value)}
               type="password"
-              placeholder="Password"
+              placeholder="Wachtwoord"
+              required
+            />
+          </Form.Group>
+          <Form.Group controlId="formBasicPassword">
+            <Form.Label>Wachtwoord bevestigen</Form.Label>
+            <Form.Control
+              value={passwordCheck}
+              onChange={(event) => setPasswordCheck(event.target.value)}
+              type="password"
+              placeholder="Wachtwoord"
               required
             />
           </Form.Group>
           <Form.Group className="mt-5">
             <Button variant="primary" type="submit" onClick={submitForm}>
-              Sign up
+              Aanmelden
             </Button>
           </Form.Group>
-          <Link to="/login">Click here to log in</Link>
+          <Link to="/login">Klik hier om in te loggen</Link>
         </Form>
       </Container>
       <footer class="footer bg-light text-center text-lg-start">
