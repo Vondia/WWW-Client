@@ -1,5 +1,5 @@
 import axios from "axios";
-import apiUrl from "../../config/constants";
+import { apiUrl } from "../../config/constants";
 
 export function storyList(data) {
   return {

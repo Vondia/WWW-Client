@@ -1,7 +1,7 @@
 import axios from "axios";
 import { fetchStories } from "../allStories/actions";
 import { selectToken } from "../user/selectors";
-import apiUrl from "../../config/constants";
+import { apiUrl } from "../../config/constants";
 
 // export const STORIES_DELETE = "STORIES_DELETE";
 
