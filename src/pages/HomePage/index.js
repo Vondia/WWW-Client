@@ -14,7 +14,7 @@ export default function HomePage() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="background">
       <div class="flex-container">
         {!Array.isArray(allStories) ? (
           <p>loading ...</p>

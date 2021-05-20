@@ -38,3 +38,7 @@
 .image-container:hover .middle {
   opacity: 1;
 }
+
+.background {
+  background-color: #aedff7;
+}
