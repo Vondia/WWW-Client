@@ -6,7 +6,7 @@
   -moz-background-size: cover;
   background-size: cover;
   -o-background-size: cover;
-  height: 90vmin;
+  height: 100vh;
   display: flex;
 }
 
@@ -45,6 +45,14 @@
   color: #700660;
   padding-top: 2px;
   padding-bottom: 5px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap");

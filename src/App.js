@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import "./App.css";
-
+import "./styles/global-styles.css";
+import "./styles/reset.css";
 import { Switch, Route, Redirect } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import Loading from "./components/Loading";

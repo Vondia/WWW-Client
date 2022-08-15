@@ -35,8 +35,8 @@ export default function HomePage() {
           </div>
         </Container>
       </div>
-      <footer className="footer bg-light text-center text-lg-start">
-        <div className="text-center p-3" style={{ backgroundColor: "#Aedff7" }}>
+      <footer className="footer bg-light text-lg-start">
+        <div className="p-3" style={{ backgroundColor: "#Aedff7" }}>
           © 2021 Copyright: WereldWijde Weetjes
         </div>
       </footer>

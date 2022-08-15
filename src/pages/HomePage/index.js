@@ -33,6 +33,11 @@ export default function HomePage() {
           })
         )}
       </div>
+      <footer className="footer bg-light text-lg-start">
+        <div className="p-3" style={{ backgroundColor: "#Aedff7" }}>
+          © 2021 Copyright: WereldWijde Weetjes
+        </div>
+      </footer>
     </div>
   );
 }
